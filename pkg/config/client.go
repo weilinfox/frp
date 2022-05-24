@@ -157,6 +157,8 @@ type ClientCommonConf struct {
 	// Enable golang pprof handlers in admin listener.
 	// Admin port must be set first.
 	PprofEnable bool `ini:"pprof_enable" json:"pprof_enable"`
+	// Hostname. By default, this value is empty
+	Hostname string `ini:"hostname"`
 }
 
 // GetDefaultClientConf returns a client configuration with default values.
@@ -196,6 +198,7 @@ func GetDefaultClientConf() ClientCommonConf {
 		UDPPacketSize:           1500,
 		IncludeConfigFiles:      make([]string, 0),
 		PprofEnable:             false,
+		Hostname:                "",
 	}
 }
 

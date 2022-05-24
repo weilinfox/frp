@@ -311,6 +311,7 @@ func (svr *Service) login() (conn net.Conn, session *fmux.Session, err error) {
 	loginMsg := &msg.Login{
 		Arch:      runtime.GOARCH,
 		Os:        runtime.GOOS,
+		Hostname:  svr.cfg.Hostname,
 		PoolCount: svr.cfg.PoolCount,
 		User:      svr.cfg.User,
 		Version:   version.Full(),
