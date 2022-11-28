@@ -1,7 +1,3 @@
-### New
+### Improve
 
-* Added new parameter `config_dir` in frpc to run multiple client instances in one process.
-
-### Fix
-
-* Equal sign in environment variables causes parsing error.
+* Adjust http group load balancing to forward requests to each frpc proxy round robin. Previous behavior is always forwarding requests to single proxy in the case of single concurrency.
